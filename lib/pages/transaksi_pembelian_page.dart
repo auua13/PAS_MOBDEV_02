@@ -4,10 +4,12 @@ import 'package:pas_gasal_02/controller/transaksi_pembelian_controller.dart';
 import 'package:pas_gasal_02/components/loginclone_image1.dart';
 import 'package:pas_gasal_02/controller/kuliner_controller.dart';
 
-class DetailListProdukPage extends StatelessWidget {
-  DetailListProdukPage({super.key});
 
-  final controller = Get.put(TransaksiPembelianController());
+class TransaksiPembelianPage extends StatelessWidget {
+  TransaksiPembelianPage({super.key});
+
+  final  controller = Get.put(KulinerController());
+  final  controller2 = Get.put(TransakasiController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +27,22 @@ class DetailListProdukPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(height: 220,margin: const EdgeInsets.symmetric(horizontal: 16),decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(16),border: Border.all(color: Colors.grey.shade300),),
-               child: Image.asset(controller.imageMakanan,fit: BoxFit.contain,),
+               child: Image.asset(controller2.imageMakanan,fit: BoxFit.contain,),
             ),
             const SizedBox(height: 16),
  
             Container(padding: const EdgeInsets.all(16),decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(16),border: Border.all(color: Colors.grey.shade300),),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(" ${controller.namaMakanan}", style:  TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87),),
-                  Text(" ${controller.hargaMakanan}", style:  TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[600]),),
+                  Text(" ${controller2.namaMakanan}", style:  TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87),),
+                  Text(" ${controller2.hargaMakanan}", style:  TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[600]),),
                 
                   
                   const Divider(height: 24),
 
                   Text("Deskripsi Makanan",style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.grey[600]),),
                   const SizedBox(height: 4),
-                  Text(controller.deskripsiMakanan,style: const TextStyle(fontSize: 15, color: Colors.black87, height: 1.4),),
+                  Text(controller2.deskripsiMakanan,style: const TextStyle(fontSize: 15, color: Colors.black87, height: 1.4),),
 
                   const Divider(height: 24),
                 ],
@@ -118,3 +120,6 @@ class DetailListProdukPage extends StatelessWidget {
     );
   }
 }
+
+
+

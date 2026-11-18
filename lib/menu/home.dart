@@ -53,7 +53,7 @@ class KulinerPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {
                               Get.toNamed(
-                                Routes.detailListProduk,
+                                Routes.transaksiPembelian,
                                 arguments: {
                                   'namaProduk': makanan.nama,
                                   'hargaProduk': makanan.harga,
